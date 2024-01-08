@@ -31,6 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        notesAdapter.refreshData(db.getAllnotes())
+        notesAdapter.refreshData(db.getAllnotes()       )
     }
 }
