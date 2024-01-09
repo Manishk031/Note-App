@@ -15,7 +15,7 @@ class NotesAdapter (private var note: List<Note>, context:Context):
     {
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
-        val updateButton: ImageView = itemView.findViewById(R.id.saveButton)
+        val updateButton: ImageView = itemView.findViewById(R.id.updateButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
