@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.ContactsContract.Data
+import androidx.core.content.contentValuesOf
 import androidx.core.widget.ContentLoadingProgressBar
 import com.google.firebase.firestore.model.Values
 
@@ -86,5 +87,14 @@ class NoteDatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_N
         cursor.close()
         db.close()
         return Note(id,title,context)
+    }
+
+    fun deleteNote(noteId: Int)
+    {
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID=?"
+        val whereArgs = arrayOf(noteId.toString())
+        db.delete(TABLE_NAME,whereClause,whereArgs)
+        db.close()
     }
 }
